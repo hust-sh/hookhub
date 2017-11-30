@@ -1,14 +1,14 @@
 #!/bin/sh
 
-White='\033[1;36m'
-NC='\033[0m' # No Color
+root_dir=$(pwd)
+
 case "$1" in
 
     "build" )
         docker build -t hookhub:latest .
     ;;
     "run" )
-        docker run -d -p 3002:3002 -v /root/test/webhook/app:/mnt/ -v /root/test/webhook/log/:/var/log/ --name hookhub hookhub:latest 
+        docker run -d -p 3002:3002 -v ${root_dir}/app:/mnt/ -v ${root_dir}/log/:/var/log/ --name hookhub hookhub:latest 
     ;;
     "restart" )
         docker container restart hookhub
@@ -17,12 +17,12 @@ case "$1" in
         docker container stop hookhub
     ;;
     "debug" )
-        docker run --rm -p 3002:3002 -v /root/test/webhook/app:/mnt/ -v /root/test/webhook/log/:/var/log/ --name hookhub hookhub:latest
+        docker run --rm -p 3002:3002 -v ${root_dir}/app:/mnt/ -v ${root_dir}/log/:/var/log/ --name hookhub hookhub:latest
     ;;
     * )
-        echo "${White}build${NC}: build hookhub server"
-        echo "${White}run  ${NC}: run hookhub server"
-        echo "${White}stop ${NC}: stop hookhub server"
-        echo "${White}restart ${NC}: restart hookhub server"
+        echo "build: build hookhub server"
+        echo "run  : run hookhub server"
+        echo "stop : stop hookhub server"
+        echo "restart : restart hookhub server"
 
 esac
