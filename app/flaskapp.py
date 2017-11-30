@@ -30,21 +30,8 @@ def webhook(site):
 
     return 'ok'
 
-'''
-    if site == 'jira':
-        msg = Jira.transform_data(data)
-        resp = Jira.send_message(msg)
-        logging.info("jira does: %s", resp)
-    elif site == 'jenkins':
-        msg = Jenkins.transform_data(data)
-        resp = Jenkins.send_message(msg)
-        logging.info("jenkins dose: %s", resp)
-'''
-
-
 
 app.register_blueprint(blueprint)
-
 
 
 @app.route('/test')
@@ -52,21 +39,6 @@ def test():
 
     return url_for('admin.webhook', access_token='abc123',  _external=True)
 
-'''
-@app.route('/webhook/gitlab', methods=['GET', 'POST'])
-def gitlab():
-
-    data = request.get_json()
-    logging.info('\n[gitlab\n<^>\n{data}\n<^>\ngitlab]\n'.format(data=formating(data)))
-    return 'ok'
-
-@app.route('/webhook/jira', methods=['GET', 'POST'])
-def jira():
-
-    data = request.get_json()
-    logging.info('\n[jira\n<^>\n{data}\n<^>\njira]\n'.format(data=formating(data)))
-    return 'ok'
-'''
 
 def formating(data):
 
