@@ -4,14 +4,5 @@
 
 ## Get Started
 
-  * build
+        docker-compose -f docker/docker-compose.yml up -d
 
-        ./automation.sh build
-
-  * run
-
-        ./automation.sh run
-
-  * stop
-
-        ./automation.sh stop

@@ -31,3 +31,2106 @@ DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?acc
 INFO:root:resp: {'errcode': 0, 'errmsg': 'ok'}
 INFO:root:resp: <Response [200]>
 INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:36:29] "POST /webhook/jenkins HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512038960636,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127944/comment/58627",
+    "id": "58627",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u5386\u53f2\u95ee\u9898\uff0c\u770b\u8bb0\u5f55\u51e0\u5e74\u4e8c\u6708\u4efd\u5f00\u53d1\u5b8c\u6210\u5df2\u7ecf\u6709\u95ee\u9898\u4e86\uff0c\u662f\u56e0\u4e3a\u70b9\u8d5e\u63a5\u53e3\u4e2d\u5bf9group_id\u4f20\u6210\u4e86\u4e00\u4e2a\u7f13\u5b58\u7684\u6587\u7ae0\u7684id\u800c\u4e0d\u662f\u5e16\u5b50\u7684id\u5bfc\u81f4",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:49:20.636+0800",
+    "updated": "2017-11-30T18:49:20.636+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512038960636, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127944/comment/58627', 'id': '58627', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'body': '历史问题，看记录几年二月份开发完成已经有问题了，是因为点赞接口中对group_id传成了一个缓存的文章的id而不是帖子的id导致', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T18:49:20.636+0800', 'updated': '2017-11-30T18:49:20.636+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:49:21] "POST /webhook/jira?user_id=zhengshitu&user_key=zhengshitu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039069060,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127964/comment/58628",
+    "id": "58628",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u5386\u53f2\u95ee\u9898\uff0c\u5f53\u65f6v2\u8be6\u60c5\u9875\u505a\u7684\u65f6\u5019\u6ca1\u6709\u652f\u6301\u4e3e\u62a5\u529f\u80fd",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:51:09.060+0800",
+    "updated": "2017-11-30T18:51:09.060+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039069060, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127964/comment/58628', 'id': '58628', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'body': '历史问题，当时v2详情页做的时候没有支持举报功能', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T18:51:09.060+0800', 'updated': '2017-11-30T18:51:09.060+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:51:09] "POST /webhook/jira?user_id=zhengshitu&user_key=zhengshitu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039184127,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127913/comment/58630",
+    "id": "58630",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u6ca1\u6709\u5bf9\u6587\u672c\u6846\u524d\u9762\u7684\u7a7a\u683c\u8fdb\u884c\u5904\u7406\u5bfc\u81f4\uff0c\u56e0\u4e3a\u4e0a\u62a5\u670d\u52a1\u7aef\u65f6\u9700\u8981\u5bf9\u6587\u672c\u6846\u4e2d\u7684\u5185\u5bb9\u8fdb\u884ctrim\u64cd\u4f5c\uff0ctrim\u4e4b\u540e\u5bcc\u6587\u672c\u94fe\u63a5\u4f4d\u7f6e\u5bf9\u4e0d\u4e0a",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:53:04.127+0800",
+    "updated": "2017-11-30T18:53:04.127+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039184127, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127913/comment/58630', 'id': '58630', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'body': '没有对文本框前面的空格进行处理导致，因为上报服务端时需要对文本框中的内容进行trim操作，trim之后富文本链接位置对不上', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhengshitu', 'name': 'zhengshitu', 'key': 'zhengshitu', 'emailAddress': 'zhengshitu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '郑识途', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T18:53:04.127+0800', 'updated': '2017-11-30T18:53:04.127+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:53:04] "POST /webhook/jira?user_id=zhengshitu&user_key=zhengshitu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039185266,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127984/comment/58631",
+    "id": "58631",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiang.aaron",
+      "name": "zhangxiang.aaron",
+      "key": "zhangxiang.aaron",
+      "emailAddress": "zhangxiang.aaron@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "zhangxiang.aaron",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u5e94\u7528\u4e0b\u8f7d\u89c6\u9891\u5e7f\u544a\u670d\u52a1\u7aef\u4e0b\u53d1\u4e3a\u65e0\u8bc4\u8bba\u6837\u5f0f\uff0c \u4fee\u6539\u4e86\u5168\u5c4f\u56de\u6765\u5c55\u793a\u8bc4\u8bba\u680f\u7684bug \u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiang.aaron",
+      "name": "zhangxiang.aaron",
+      "key": "zhangxiang.aaron",
+      "emailAddress": "zhangxiang.aaron@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "zhangxiang.aaron",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:53:05.266+0800",
+    "updated": "2017-11-30T18:53:05.266+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039185266, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127984/comment/58631', 'id': '58631', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiang.aaron', 'name': 'zhangxiang.aaron', 'key': 'zhangxiang.aaron', 'emailAddress': 'zhangxiang.aaron@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'zhangxiang.aaron', 'active': True, 'timeZone': 'PRC'}, 'body': '应用下载视频广告服务端下发为无评论样式， 修改了全屏回来展示评论栏的bug 。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiang.aaron', 'name': 'zhangxiang.aaron', 'key': 'zhangxiang.aaron', 'emailAddress': 'zhangxiang.aaron@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'zhangxiang.aaron', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T18:53:05.266+0800', 'updated': '2017-11-30T18:53:05.266+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:53:05] "POST /webhook/jira?user_id=zhangxiang.aaron&user_key=zhangxiang.aaron HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039219629,
+  "webhookEvent": "comment_updated",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127913/comment/58630",
+    "id": "58630",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u6ca1\u6709\u5bf9\u6587\u672c\u6846\u524d\u9762\u7684\u7a7a\u683c\u8fdb\u884c\u5904\u7406\u5bfc\u81f4\uff0c\u56e0\u4e3a\u4e0a\u62a5\u670d\u52a1\u7aef\u65f6\u9700\u8981\u5bf9\u6587\u672c\u6846\u4e2d\u7684\u5185\u5bb9\u8fdb\u884ctrim\u64cd\u4f5c\uff0c\u800c\u6ca1\u6709\u66f4\u65b0RichContent\u7684\u5185\u5bb9\uff0c\u5bfc\u81f4trim\u4e4b\u540e\u5bcc\u6587\u672c\u94fe\u63a5\u4f4d\u7f6e\u5bf9\u4e0d\u4e0a",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhengshitu",
+      "name": "zhengshitu",
+      "key": "zhengshitu",
+      "emailAddress": "zhengshitu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u90d1\u8bc6\u9014",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:53:04.000+0800",
+    "updated": "2017-11-30T18:53:39.629+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:msg: {'msgtype': 'markdown', 'markdown': {'title': '', 'text': '####  \n'}}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 300001, 'errmsg': 'message param title is null '}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:53:39] "POST /webhook/jira?user_id=zhengshitu&user_key=zhengshitu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039287267,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128138/comment/58633",
+    "id": "58633",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangqing.harvey",
+      "name": "zhangqing.harvey",
+      "key": "zhangqing.harvey",
+      "emailAddress": "zhangqing.harvey@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11136",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11136",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11136",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11136"
+      },
+      "displayName": "\u5f20\u5e86",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u95ee\u9898\u5df2\u5b9a\u4f4d\uff0c\u5df2\u5b9a\u4f4d\uff0c\u6b63\u5728\u4fee\u590d\u4e2d\uff0c\u4e0d\u5f71\u54cd\u7070\u5ea6",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangqing.harvey",
+      "name": "zhangqing.harvey",
+      "key": "zhangqing.harvey",
+      "emailAddress": "zhangqing.harvey@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11136",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11136",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11136",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11136"
+      },
+      "displayName": "\u5f20\u5e86",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T18:54:47.267+0800",
+    "updated": "2017-11-30T18:54:47.267+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039287267, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128138/comment/58633', 'id': '58633', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangqing.harvey', 'name': 'zhangqing.harvey', 'key': 'zhangqing.harvey', 'emailAddress': 'zhangqing.harvey@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11136', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11136', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11136', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11136'}, 'displayName': '张庆', 'active': True, 'timeZone': 'PRC'}, 'body': '问题已定位，已定位，正在修复中，不影响灰度', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangqing.harvey', 'name': 'zhangqing.harvey', 'key': 'zhangqing.harvey', 'emailAddress': 'zhangqing.harvey@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11136', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11136', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11136', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11136'}, 'displayName': '张庆', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T18:54:47.267+0800', 'updated': '2017-11-30T18:54:47.267+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 10:54:47] "POST /webhook/jira?user_id=zhangqing.harvey&user_key=zhangqing.harvey HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039671956,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/126837/comment/58634",
+    "id": "58634",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=liuna",
+      "name": "liuna",
+      "key": "liuna",
+      "emailAddress": "liuna@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11137",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11137",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11137",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11137"
+      },
+      "displayName": "\u5218\u5a1c",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u670d\u52a1\u7aef\u8fd4\u56de\u6570\u636e\u95ee\u9898\uff0c\u6682\u65f6\u4e0d\u6539",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=liuna",
+      "name": "liuna",
+      "key": "liuna",
+      "emailAddress": "liuna@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11137",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11137",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11137",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11137"
+      },
+      "displayName": "\u5218\u5a1c",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:01:11.956+0800",
+    "updated": "2017-11-30T19:01:11.956+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039671956, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/126837/comment/58634', 'id': '58634', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=liuna', 'name': 'liuna', 'key': 'liuna', 'emailAddress': 'liuna@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11137', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11137', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11137', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11137'}, 'displayName': '刘娜', 'active': True, 'timeZone': 'PRC'}, 'body': '服务端返回数据问题，暂时不改', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=liuna', 'name': 'liuna', 'key': 'liuna', 'emailAddress': 'liuna@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11137', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11137', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11137', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11137'}, 'displayName': '刘娜', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:01:11.956+0800', 'updated': '2017-11-30T19:01:11.956+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:01:12] "POST /webhook/jira?user_id=liuna&user_key=liuna HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039709220,
+  "webhookEvent": "comment_deleted",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125449/comment/58604",
+    "id": "58604",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=tangcui",
+      "name": "tangcui",
+      "key": "tangcui",
+      "emailAddress": "tangcui@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=tangcui&avatarId=11607",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=tangcui&avatarId=11607",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=tangcui&avatarId=11607",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=tangcui&avatarId=11607"
+      },
+      "displayName": "\u5510\u7fe0",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u6839\u636e\u539f\u56e0\u91cd\u65b0\u8bad\u7ec3\u4e86\u4e00\u6279\uff0c\u6bd4\u539f\u6765\u597d\uff0c\u4f46\u662f\u8fd8\u4e0d\u7406\u60f3\uff0c\u4e3b\u8981\u539f\u56e0\u6211\u4eec\u7684\u6570\u636e\u7279\u5f81\u592a\u5c11",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=tangcui",
+      "name": "tangcui",
+      "key": "tangcui",
+      "emailAddress": "tangcui@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=tangcui&avatarId=11607",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=tangcui&avatarId=11607",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=tangcui&avatarId=11607",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=tangcui&avatarId=11607"
+      },
+      "displayName": "\u5510\u7fe0",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T17:34:19.000+0800",
+    "updated": "2017-11-30T17:34:19.000+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:msg: {'msgtype': 'markdown', 'markdown': {'title': '', 'text': '####  \n'}}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 300001, 'errmsg': 'message param title is null '}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:01:49] "POST /webhook/jira?user_id=wangjinghao&user_key=wangjinghao HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512039963282,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128301/comment/58635",
+    "id": "58635",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangjingyi",
+      "name": "wangjingyi",
+      "key": "wangjingyi",
+      "emailAddress": "wangjingyi@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u738b\u9759\u6021",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u73b0\u5728emoji\u8868\u60c5\u6216\u8005@\u9ad8\u4eae \u8bdd\u9898\u9ad8\u4eae\u7edf\u4e00\u670d\u52a1\u7aef\u5904\u7406\uff0c\u901a\u8fc7\u4e0b\u53d1\u7684rich_content\u5bf9\u5e94\u5c55\u793a\uff0c\u76ee\u524d\u7684case\u5bf9\u5e94\u5b57\u6bb5\u89e3\u6790\u6709\u95ee\u9898\uff0c\u6653\u6674\u770b\u4e0b\uff1a\r\n\r\n\u8bc4\u8bba \u8fd9\u4e2a\u5730\u65b9\u597d\u770b\u597d\u770b\u597d\u770b\u54c8\u54c8\u54c8\u54c8\u54c8\u54c8\u54c8\u54c8//<a href=\"sslocal://profile?uid=52447075453&refer=dongtai\">@\u70ab\u9177\u6d4b\u8bd5\u4e00\u597d\u5427\u90a3\u4f60</a>:<a href=\"sslocal://profile?from_page=at_user_profile&group_id=1585487019000845&refer=dongtai&uid=73553311012\">@dengdengtest</a> <i class=\"emoji emoji_6_cry\"></i><span class=\"emoji-name\">[\u6d41\u6cea]</span><i class=\"emoji emoji_6_cry\"></i><span class=\"emoji-name\">[\u6d41\u6cea]</span><i class=\"emoji emoji_6_cry\"></i><span class=\"emoji-name\">[\u6d41\u6cea]</span><i class=\"emoji emoji_7_anger\"></i><span class=\"emoji-name\">[\u53d1\u6012]</span><i class=\"emoji emoji_7_anger\"></i><span class=\"emoji-name\">[\u53d1\u6012]</span><i class=\"emoji emoji_7_anger\"></i><span class=\"emoji-name\">[\u53d1\u6012]</span>[\u7948\u7977][\u7948\u7977][\u7948\u7977]",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangjingyi",
+      "name": "wangjingyi",
+      "key": "wangjingyi",
+      "emailAddress": "wangjingyi@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u738b\u9759\u6021",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:06:03.282+0800",
+    "updated": "2017-11-30T19:06:03.282+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512039963282, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128301/comment/58635', 'id': '58635', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangjingyi', 'name': 'wangjingyi', 'key': 'wangjingyi', 'emailAddress': 'wangjingyi@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '王静怡', 'active': True, 'timeZone': 'PRC'}, 'body': '现在emoji表情或者@高亮 话题高亮统一服务端处理，通过下发的rich_content对应展示，目前的case对应字段解析有问题，晓晴看下：\r\n\r\n评论 这个地方好看好看好看哈哈哈哈哈哈哈哈//<a href="sslocal://profile?uid=52447075453&refer=dongtai">@炫酷测试一好吧那你</a>:<a href="sslocal://profile?from_page=at_user_profile&group_id=1585487019000845&refer=dongtai&uid=73553311012">@dengdengtest</a> <i class="emoji emoji_6_cry"></i><span class="emoji-name">[流泪]</span><i class="emoji emoji_6_cry"></i><span class="emoji-name">[流泪]</span><i class="emoji emoji_6_cry"></i><span class="emoji-name">[流泪]</span><i class="emoji emoji_7_anger"></i><span class="emoji-name">[发怒]</span><i class="emoji emoji_7_anger"></i><span class="emoji-name">[发怒]</span><i class="emoji emoji_7_anger"></i><span class="emoji-name">[发怒]</span>[祈祷][祈祷][祈祷]', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangjingyi', 'name': 'wangjingyi', 'key': 'wangjingyi', 'emailAddress': 'wangjingyi@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '王静怡', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:06:03.282+0800', 'updated': '2017-11-30T19:06:03.282+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:06:03] "POST /webhook/jira?user_id=wangjingyi&user_key=wangjingyi HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512040174570,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125747/comment/58636",
+    "id": "58636",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dingli",
+      "name": "dingli",
+      "key": "dingli",
+      "emailAddress": "dingli@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511"
+      },
+      "displayName": "\u4e01\u529b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u63d0\u6d4b\u5206\u652f\uff1a\r\nlive/dev\r\n\r\n\u6ce8\u610f\u4e8b\u9879\uff1a\r\n\u8bc4\u8bba\u533a\u53d8\u7a84\uff0c\u7b49\u8302\u5ef6\u7684UI\u9002\u914d\u4e00\u8d77\u8c03\u6574\uff0c\u6b64task\u4e0d\u6d89\u53ca",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dingli",
+      "name": "dingli",
+      "key": "dingli",
+      "emailAddress": "dingli@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511"
+      },
+      "displayName": "\u4e01\u529b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:09:34.570+0800",
+    "updated": "2017-11-30T19:09:34.570+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512040174570, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/125747/comment/58636', 'id': '58636', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dingli', 'name': 'dingli', 'key': 'dingli', 'emailAddress': 'dingli@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511'}, 'displayName': '丁力', 'active': True, 'timeZone': 'PRC'}, 'body': '提测分支：\r\nlive/dev\r\n\r\n注意事项：\r\n评论区变窄，等茂延的UI适配一起调整，此task不涉及', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dingli', 'name': 'dingli', 'key': 'dingli', 'emailAddress': 'dingli@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511'}, 'displayName': '丁力', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:09:34.570+0800', 'updated': '2017-11-30T19:09:34.570+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:09:34] "POST /webhook/jira?user_id=dingli&user_key=dingli HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512040232017,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125750/comment/58637",
+    "id": "58637",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dingli",
+      "name": "dingli",
+      "key": "dingli",
+      "emailAddress": "dingli@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511"
+      },
+      "displayName": "\u4e01\u529b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u63d0\u6d4b\u5206\u652f\uff1a\r\nlive/dev\r\n",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dingli",
+      "name": "dingli",
+      "key": "dingli",
+      "emailAddress": "dingli@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511"
+      },
+      "displayName": "\u4e01\u529b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:10:32.017+0800",
+    "updated": "2017-11-30T19:10:32.017+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512040232017, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/125750/comment/58637', 'id': '58637', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dingli', 'name': 'dingli', 'key': 'dingli', 'emailAddress': 'dingli@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511'}, 'displayName': '丁力', 'active': True, 'timeZone': 'PRC'}, 'body': '提测分支：\r\nlive/dev\r\n', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dingli', 'name': 'dingli', 'key': 'dingli', 'emailAddress': 'dingli@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=dingli&avatarId=11511', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=dingli&avatarId=11511', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=dingli&avatarId=11511', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=dingli&avatarId=11511'}, 'displayName': '丁力', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:10:32.017+0800', 'updated': '2017-11-30T19:10:32.017+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:10:32] "POST /webhook/jira?user_id=dingli&user_key=dingli HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512040629597,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128299/comment/58638",
+    "id": "58638",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=lipeilun",
+      "name": "lipeilun",
+      "key": "lipeilun",
+      "emailAddress": "lipeilun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u674e\u6c9b\u4f26",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "bugfix_personal_page_follow_quick\u5206\u652f\u4fee\u590d",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=lipeilun",
+      "name": "lipeilun",
+      "key": "lipeilun",
+      "emailAddress": "lipeilun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u674e\u6c9b\u4f26",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:17:09.597+0800",
+    "updated": "2017-11-30T19:17:09.597+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512040629597, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128299/comment/58638', 'id': '58638', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=lipeilun', 'name': 'lipeilun', 'key': 'lipeilun', 'emailAddress': 'lipeilun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '李沛伦', 'active': True, 'timeZone': 'PRC'}, 'body': 'bugfix_personal_page_follow_quick分支修复', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=lipeilun', 'name': 'lipeilun', 'key': 'lipeilun', 'emailAddress': 'lipeilun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '李沛伦', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:17:09.597+0800', 'updated': '2017-11-30T19:17:09.597+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:17:09] "POST /webhook/jira?user_id=lipeilun&user_key=lipeilun HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512041527935,
+  "webhookEvent": "comment_updated",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125764/comment/58418",
+    "id": "58418",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=liuqing.90",
+      "name": "liuqing.90",
+      "key": "liuqing.90",
+      "emailAddress": "liuqing.90@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u5218\u9752",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u3010\u63d0\u6d4b\u529f\u80fd\u3011 doing by [~wanglei.02]  \u2014\u2014done\r\n\u5e95tab refresh\r\n\u3010\u5206\u652f\u3011 \r\nfeature/2.9.0_refresh\r\n\u3010\u7ec6\u8282\u63cf\u8ff0&\u98ce\u9669\u63d0\u793a\u3011 \r\n\u7531settings\u4e2d\u7684refresh_icon_num\u51b3\u5b9a\uff0c\u5982\u679c<0\u5219\u4f7f\u7528\u9ed8\u8ba4\u7684\uff0c=0\u663e\u793aicon\u4e0d\u663e\u793a\u6570\u5b57\uff0c>0\u663e\u793aicon\u4e14\u663e\u793a\u6570\u5b57\u3002\r\n\u7531\u4e8esettings\u6709\u7f13\u5b58\uff0c\u65b0\u7684\u8bbe\u7f6e\u4e0b\u6b21\u542f\u52a8\u751f\u6548",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wanglei.02",
+      "name": "wanglei.02",
+      "key": "wanglei.02",
+      "emailAddress": "wanglei.02",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11138",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11138",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11138",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11138"
+      },
+      "displayName": "\u738b\u857e",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-29T21:27:37.000+0800",
+    "updated": "2017-11-30T19:32:07.935+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:msg: {'msgtype': 'markdown', 'markdown': {'title': '', 'text': '####  \n'}}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 300001, 'errmsg': 'message param title is null '}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:32:08] "POST /webhook/jira?user_id=wanglei.02&user_key=wanglei.02 HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512042371088,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128321/comment/58642",
+    "id": "58642",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=weizili",
+      "name": "weizili",
+      "key": "weizili",
+      "emailAddress": "weizili@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "weizili",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u786e\u8ba4\u3002\r\n\r\n\u4e0a\u7ebf\u76ee\u7684\uff08\u529f\u80fd\u70b9\uff09\u5199\u5230\u6807\u9898\u4e0a\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=weizili",
+      "name": "weizili",
+      "key": "weizili",
+      "emailAddress": "weizili@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "weizili",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:46:11.088+0800",
+    "updated": "2017-11-30T19:46:11.088+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512042371088, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128321/comment/58642', 'id': '58642', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=weizili', 'name': 'weizili', 'key': 'weizili', 'emailAddress': 'weizili@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'weizili', 'active': True, 'timeZone': 'PRC'}, 'body': '确认。\r\n\r\n上线目的（功能点）写到标题上。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=weizili', 'name': 'weizili', 'key': 'weizili', 'emailAddress': 'weizili@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'weizili', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:46:11.088+0800', 'updated': '2017-11-30T19:46:11.088+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:46:11] "POST /webhook/jira?user_id=weizili&user_key=weizili HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512042523268,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128325/comment/58644",
+    "id": "58644",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=weizili",
+      "name": "weizili",
+      "key": "weizili",
+      "emailAddress": "weizili@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "weizili",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u786e\u8ba4",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=weizili",
+      "name": "weizili",
+      "key": "weizili",
+      "emailAddress": "weizili@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "weizili",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:48:43.268+0800",
+    "updated": "2017-11-30T19:48:43.268+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512042523268, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128325/comment/58644', 'id': '58644', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=weizili', 'name': 'weizili', 'key': 'weizili', 'emailAddress': 'weizili@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'weizili', 'active': True, 'timeZone': 'PRC'}, 'body': '确认', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=weizili', 'name': 'weizili', 'key': 'weizili', 'emailAddress': 'weizili@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'weizili', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:48:43.268+0800', 'updated': '2017-11-30T19:48:43.268+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:48:43] "POST /webhook/jira?user_id=weizili&user_key=weizili HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512043123679,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128231/comment/58648",
+    "id": "58648",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=gouhongyu",
+      "name": "gouhongyu",
+      "key": "gouhongyu",
+      "emailAddress": "gouhongyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u82df\u8679\u96e8",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u5f39\u7a97\u4e92\u65a5\u903b\u8f91\u5f15\u5165\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=gouhongyu",
+      "name": "gouhongyu",
+      "key": "gouhongyu",
+      "emailAddress": "gouhongyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u82df\u8679\u96e8",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:58:43.679+0800",
+    "updated": "2017-11-30T19:58:43.679+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512043123679, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128231/comment/58648', 'id': '58648', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=gouhongyu', 'name': 'gouhongyu', 'key': 'gouhongyu', 'emailAddress': 'gouhongyu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '苟虹雨', 'active': True, 'timeZone': 'PRC'}, 'body': '弹窗互斥逻辑引入。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=gouhongyu', 'name': 'gouhongyu', 'key': 'gouhongyu', 'emailAddress': 'gouhongyu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '苟虹雨', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T19:58:43.679+0800', 'updated': '2017-11-30T19:58:43.679+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:58:43] "POST /webhook/jira?user_id=gouhongyu&user_key=gouhongyu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512043134935,
+  "webhookEvent": "comment_updated",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128231/comment/58648",
+    "id": "58648",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=gouhongyu",
+      "name": "gouhongyu",
+      "key": "gouhongyu",
+      "emailAddress": "gouhongyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u82df\u8679\u96e8",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u589e\u52a0\u5f39\u7a97\u4e92\u65a5\u903b\u8f91\u5f15\u5165\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=gouhongyu",
+      "name": "gouhongyu",
+      "key": "gouhongyu",
+      "emailAddress": "gouhongyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u82df\u8679\u96e8",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T19:58:43.000+0800",
+    "updated": "2017-11-30T19:58:54.935+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:msg: {'msgtype': 'markdown', 'markdown': {'title': '', 'text': '####  \n'}}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 300001, 'errmsg': 'message param title is null '}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 11:58:55] "POST /webhook/jira?user_id=gouhongyu&user_key=gouhongyu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512043444280,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/90029/comment/58653",
+    "id": "58653",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02",
+      "name": "zhangxiaoxue.02",
+      "key": "zhangxiaoxue.02",
+      "emailAddress": "zhangxiaoxue.02@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11141",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141"
+      },
+      "displayName": "\u5f20\u5c0f\u96ea",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u8be5\u95ee\u9898\u5df2\u5728\u6700\u65b0\u5305\u4fee\u590d\uff0c\u5173\u95ed\u8be5bug\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02",
+      "name": "zhangxiaoxue.02",
+      "key": "zhangxiaoxue.02",
+      "emailAddress": "zhangxiaoxue.02@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11141",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141"
+      },
+      "displayName": "\u5f20\u5c0f\u96ea",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:04:04.280+0800",
+    "updated": "2017-11-30T20:04:04.280+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512043444280, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/90029/comment/58653', 'id': '58653', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02', 'name': 'zhangxiaoxue.02', 'key': 'zhangxiaoxue.02', 'emailAddress': 'zhangxiaoxue.02@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11141', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141'}, 'displayName': '张小雪', 'active': True, 'timeZone': 'PRC'}, 'body': '该问题已在最新包修复，关闭该bug。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02', 'name': 'zhangxiaoxue.02', 'key': 'zhangxiaoxue.02', 'emailAddress': 'zhangxiaoxue.02@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11141', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141'}, 'displayName': '张小雪', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:04:04.280+0800', 'updated': '2017-11-30T20:04:04.280+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:04:04] "POST /webhook/jira?user_id=zhangxiaoxue.02&user_key=zhangxiaoxue.02 HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512043480214,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128286/comment/58654",
+    "id": "58654",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dengjiangjun",
+      "name": "dengjiangjun",
+      "key": "dengjiangjun",
+      "emailAddress": "dengjiangjun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u9093\u5c06\u519b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u628a\u5177\u4f53\u7684\u590d\u73b0\u6b65\u9aa4\u63cf\u8ff0\u4e0b",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=dengjiangjun",
+      "name": "dengjiangjun",
+      "key": "dengjiangjun",
+      "emailAddress": "dengjiangjun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u9093\u5c06\u519b",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:04:40.214+0800",
+    "updated": "2017-11-30T20:04:40.214+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512043480214, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128286/comment/58654', 'id': '58654', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dengjiangjun', 'name': 'dengjiangjun', 'key': 'dengjiangjun', 'emailAddress': 'dengjiangjun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '邓将军', 'active': True, 'timeZone': 'PRC'}, 'body': '把具体的复现步骤描述下', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=dengjiangjun', 'name': 'dengjiangjun', 'key': 'dengjiangjun', 'emailAddress': 'dengjiangjun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '邓将军', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:04:40.214+0800', 'updated': '2017-11-30T20:04:40.214+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:04:40] "POST /webhook/jira?user_id=dengjiangjun&user_key=dengjiangjun HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512043951480,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128063/comment/58658",
+    "id": "58658",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=maoyu",
+      "name": "maoyu",
+      "key": "maoyu",
+      "emailAddress": "maoyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "maoyu",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u95ee\u9898\u5728649\u4fee\u590d\uff0c\u6682\u65f6\u4e0d\u5f71\u54cd\u53d1\u7248",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=maoyu",
+      "name": "maoyu",
+      "key": "maoyu",
+      "emailAddress": "maoyu@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "maoyu",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:12:31.480+0800",
+    "updated": "2017-11-30T20:12:31.480+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512043951480, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128063/comment/58658', 'id': '58658', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=maoyu', 'name': 'maoyu', 'key': 'maoyu', 'emailAddress': 'maoyu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'maoyu', 'active': True, 'timeZone': 'PRC'}, 'body': '问题在649修复，暂时不影响发版', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=maoyu', 'name': 'maoyu', 'key': 'maoyu', 'emailAddress': 'maoyu@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'maoyu', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:12:31.480+0800', 'updated': '2017-11-30T20:12:31.480+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:12:31] "POST /webhook/jira?user_id=maoyu&user_key=maoyu HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512044597304,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128294/comment/58668",
+    "id": "58668",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=lipeilun",
+      "name": "lipeilun",
+      "key": "lipeilun",
+      "emailAddress": "lipeilun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u674e\u6c9b\u4f26",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "bugfix_personal_page_follow_quick\u5206\u652f\u4fee\u590d",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=lipeilun",
+      "name": "lipeilun",
+      "key": "lipeilun",
+      "emailAddress": "lipeilun@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u674e\u6c9b\u4f26",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:23:17.304+0800",
+    "updated": "2017-11-30T20:23:17.304+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512044597304, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128294/comment/58668', 'id': '58668', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=lipeilun', 'name': 'lipeilun', 'key': 'lipeilun', 'emailAddress': 'lipeilun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '李沛伦', 'active': True, 'timeZone': 'PRC'}, 'body': 'bugfix_personal_page_follow_quick分支修复', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=lipeilun', 'name': 'lipeilun', 'key': 'lipeilun', 'emailAddress': 'lipeilun@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '李沛伦', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:23:17.304+0800', 'updated': '2017-11-30T20:23:17.304+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:23:17] "POST /webhook/jira?user_id=lipeilun&user_key=lipeilun HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512044967822,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127883/comment/58671",
+    "id": "58671",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangpan",
+      "name": "wangpan",
+      "key": "wangpan",
+      "emailAddress": "wangpan@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "wangpan",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u673a\u578b\u9002\u914d\u95ee\u9898\uff0c\u4f1a\u57284.6\u4fee\u4e0b\u3002\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangpan",
+      "name": "wangpan",
+      "key": "wangpan",
+      "emailAddress": "wangpan@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "wangpan",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:29:27.822+0800",
+    "updated": "2017-11-30T20:29:27.822+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512044967822, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127883/comment/58671', 'id': '58671', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangpan', 'name': 'wangpan', 'key': 'wangpan', 'emailAddress': 'wangpan@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'wangpan', 'active': True, 'timeZone': 'PRC'}, 'body': '机型适配问题，会在4.6修下。。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangpan', 'name': 'wangpan', 'key': 'wangpan', 'emailAddress': 'wangpan@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'wangpan', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:29:27.822+0800', 'updated': '2017-11-30T20:29:27.822+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:29:27] "POST /webhook/jira?user_id=wangpan&user_key=wangpan HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512045179305,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128288/comment/58673",
+    "id": "58673",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xiaenlong",
+      "name": "xiaenlong",
+      "key": "xiaenlong",
+      "emailAddress": "xiaenlong@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=xiaenlong&avatarId=11440",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=xiaenlong&avatarId=11440",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=xiaenlong&avatarId=11440",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=xiaenlong&avatarId=11440"
+      },
+      "displayName": "\u590f\u6069\u9f99",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u7b2c\u4e00\u6b21\u4f1a\u5931\u8d25\uff0c\u4f46\u662f\u5237\u65b0\u4e00\u4e0b\u5c31\u597d\u4e86",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xiaenlong",
+      "name": "xiaenlong",
+      "key": "xiaenlong",
+      "emailAddress": "xiaenlong@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=xiaenlong&avatarId=11440",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=xiaenlong&avatarId=11440",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=xiaenlong&avatarId=11440",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=xiaenlong&avatarId=11440"
+      },
+      "displayName": "\u590f\u6069\u9f99",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:32:59.305+0800",
+    "updated": "2017-11-30T20:32:59.305+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512045179305, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128288/comment/58673', 'id': '58673', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xiaenlong', 'name': 'xiaenlong', 'key': 'xiaenlong', 'emailAddress': 'xiaenlong@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=xiaenlong&avatarId=11440', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=xiaenlong&avatarId=11440', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=xiaenlong&avatarId=11440', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=xiaenlong&avatarId=11440'}, 'displayName': '夏恩龙', 'active': True, 'timeZone': 'PRC'}, 'body': '第一次会失败，但是刷新一下就好了', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xiaenlong', 'name': 'xiaenlong', 'key': 'xiaenlong', 'emailAddress': 'xiaenlong@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=xiaenlong&avatarId=11440', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=xiaenlong&avatarId=11440', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=xiaenlong&avatarId=11440', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=xiaenlong&avatarId=11440'}, 'displayName': '夏恩龙', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:32:59.305+0800', 'updated': '2017-11-30T20:32:59.305+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:32:59] "POST /webhook/jira?user_id=xiaenlong&user_key=xiaenlong HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512045231178,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127935/comment/58674",
+    "id": "58674",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangsiyu.kid",
+      "name": "wangsiyu.kid",
+      "key": "wangsiyu.kid",
+      "emailAddress": "wangsiyu.kid@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "wangsiyu.kid",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u62c9\u4e86\u4e0b\u8fd9\u4e2a\u7528\u6237\uff0c\u53ea\u6709\u4e00\u4e2a\u70b9\u8d5e\u901a\u77e5\u3002\r\n\r\n\u6211\u611f\u89c9\u7528\u6237\u5728\u8bf4push\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangsiyu.kid",
+      "name": "wangsiyu.kid",
+      "key": "wangsiyu.kid",
+      "emailAddress": "wangsiyu.kid@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "wangsiyu.kid",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:33:51.178+0800",
+    "updated": "2017-11-30T20:33:51.178+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512045231178, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127935/comment/58674', 'id': '58674', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangsiyu.kid', 'name': 'wangsiyu.kid', 'key': 'wangsiyu.kid', 'emailAddress': 'wangsiyu.kid@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'wangsiyu.kid', 'active': True, 'timeZone': 'PRC'}, 'body': '拉了下这个用户，只有一个点赞通知。\r\n\r\n我感觉用户在说push。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangsiyu.kid', 'name': 'wangsiyu.kid', 'key': 'wangsiyu.kid', 'emailAddress': 'wangsiyu.kid@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': 'wangsiyu.kid', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:33:51.178+0800', 'updated': '2017-11-30T20:33:51.178+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:33:51] "POST /webhook/jira?user_id=wangsiyu.kid&user_key=wangsiyu.kid HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512045350019,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/123030/comment/58675",
+    "id": "58675",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=tangpeng",
+      "name": "tangpeng",
+      "key": "tangpeng",
+      "emailAddress": "tangpeng@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u6c64\u9e4f",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u6b64\u95ee\u9898\u5df2\u5728\u706b\u5c71\u6700\u65b0\u7248\u672c\u4fee\u590d\uff0c\u7b49\u6bb5\u5b50\u63a5\u5165\u518d\u9a8c",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=tangpeng",
+      "name": "tangpeng",
+      "key": "tangpeng",
+      "emailAddress": "tangpeng@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u6c64\u9e4f",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:35:50.019+0800",
+    "updated": "2017-11-30T20:35:50.019+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512045350019, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/123030/comment/58675', 'id': '58675', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=tangpeng', 'name': 'tangpeng', 'key': 'tangpeng', 'emailAddress': 'tangpeng@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '汤鹏', 'active': True, 'timeZone': 'PRC'}, 'body': '此问题已在火山最新版本修复，等段子接入再验', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=tangpeng', 'name': 'tangpeng', 'key': 'tangpeng', 'emailAddress': 'tangpeng@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '汤鹏', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:35:50.019+0800', 'updated': '2017-11-30T20:35:50.019+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:35:50] "POST /webhook/jira?user_id=tangpeng&user_key=tangpeng HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512045513830,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127472/comment/58677",
+    "id": "58677",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02",
+      "name": "zhangxiaoxue.02",
+      "key": "zhangxiaoxue.02",
+      "emailAddress": "zhangxiaoxue.02@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11141",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141"
+      },
+      "displayName": "\u5f20\u5c0f\u96ea",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u8be5\u95ee\u9898\u5df2\u5728\u6700\u65b0\u5305\u4fee\u590d\uff0c\u5173\u95ed\u8be5bug\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02",
+      "name": "zhangxiaoxue.02",
+      "key": "zhangxiaoxue.02",
+      "emailAddress": "zhangxiaoxue.02@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11141",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141"
+      },
+      "displayName": "\u5f20\u5c0f\u96ea",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:38:33.830+0800",
+    "updated": "2017-11-30T20:38:33.830+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512045513830, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127472/comment/58677', 'id': '58677', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02', 'name': 'zhangxiaoxue.02', 'key': 'zhangxiaoxue.02', 'emailAddress': 'zhangxiaoxue.02@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11141', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141'}, 'displayName': '张小雪', 'active': True, 'timeZone': 'PRC'}, 'body': '该问题已在最新包修复，关闭该bug。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxiaoxue.02', 'name': 'zhangxiaoxue.02', 'key': 'zhangxiaoxue.02', 'emailAddress': 'zhangxiaoxue.02@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11141', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11141', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11141', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11141'}, 'displayName': '张小雪', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:38:33.830+0800', 'updated': '2017-11-30T20:38:33.830+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:38:33] "POST /webhook/jira?user_id=zhangxiaoxue.02&user_key=zhangxiaoxue.02 HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512045936002,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125762/comment/58678",
+    "id": "58678",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=jiatongbin",
+      "name": "jiatongbin",
+      "key": "jiatongbin",
+      "emailAddress": "jiatongbin@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u8d3e\u540c\u5f6c",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u3010\u63d0\u6d4b\u529f\u80fd\u3011\r\n\u706b\u5c71\u6d88\u606f\u6fc0\u6d3b\u5934\u6761\r\n\u3010\u5206\u652f\u3011\r\n2.9.0_notice_toutiao\r\n\r\n\u3010\u7ec6\u8282\u63cf\u8ff0&\u98ce\u9669\u63cf\u8ff0\u3011\r\n1 \u901a\u8fc7\u7cfb\u7edf\u6d88\u606f\u51fa\u53d1\uff0cschema\u5b9a\u4e49\u683c\u5f0f\u53c2\u8003https://wiki.bytedance.net/pages/viewpage.action?pageId=55940667 \u6fc0\u6d3b\u5934\u6761\uff0cAndroid \u53c2\u8003schema\u4e3asslocal://ttactive?android_url=https%3A%2F%2Fd.toutiao.com%2F8QTx%2F&app_name=%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1&android_pkg_name=com.ss.android.article.news\r\n2 \u5982\u679c\u5934\u6761\u672a\u5b89\u88c5\u6216\u8005\u5934\u6761\u7248\u672c\u8fc7\u4f4e\uff0c\u5219\u63d0\u793a\u5347\u7ea7\u5b89\u88c5\uff0c\u5982\u679c\u652f\u6301\u5219\u8df3\u8f6c\u5934\u6761\u8fdb\u884c\u7ed1\u5b9a\uff0c\u5934\u6761\u90a3\u8fb9\u7684apk\u53ef\u4ee5\u627e\u6211\u8981\r\n3 \u4e3a\u4e86\u65b9\u4fbfQA\u540c\u5b66\u6d4b\u8bd5\uff0c\u5728\u8bbe\u7f6e\u9875\u9762\u52a0\u4e86\u6fc0\u6d3b\u5934\u6761\u914d\u7f6e\uff0c\u70b9\u51fb\u53ef\u4ee5\u8fbe\u5230\u548c\u6536\u5230\u7c7b\u4f3c\u7cfb\u7edf\u6d88\u606f\u76f8\u540c\u7684\u6548\u679c\uff0c\u4e5f\u53ef\u4ee5\u4fee\u6539\u7cfb\u7edf\u6d88\u606f\u7684schema\u4e3a1\u4e2d\u53c2\u8003",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=jiatongbin",
+      "name": "jiatongbin",
+      "key": "jiatongbin",
+      "emailAddress": "jiatongbin@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u8d3e\u540c\u5f6c",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:45:36.002+0800",
+    "updated": "2017-11-30T20:45:36.002+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512045936002, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/125762/comment/58678', 'id': '58678', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=jiatongbin', 'name': 'jiatongbin', 'key': 'jiatongbin', 'emailAddress': 'jiatongbin@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '贾同彬', 'active': True, 'timeZone': 'PRC'}, 'body': '【提测功能】\r\n火山消息激活头条\r\n【分支】\r\n2.9.0_notice_toutiao\r\n\r\n【细节描述&风险描述】\r\n1 通过系统消息出发，schema定义格式参考https://wiki.bytedance.net/pages/viewpage.action?pageId=55940667 激活头条，Android 参考schema为sslocal://ttactive?android_url=https%3A%2F%2Fd.toutiao.com%2F8QTx%2F&app_name=%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1&android_pkg_name=com.ss.android.article.news\r\n2 如果头条未安装或者头条版本过低，则提示升级安装，如果支持则跳转头条进行绑定，头条那边的apk可以找我要\r\n3 为了方便QA同学测试，在设置页面加了激活头条配置，点击可以达到和收到类似系统消息相同的效果，也可以修改系统消息的schema为1中参考', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=jiatongbin', 'name': 'jiatongbin', 'key': 'jiatongbin', 'emailAddress': 'jiatongbin@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '贾同彬', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:45:36.002+0800', 'updated': '2017-11-30T20:45:36.002+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:45:36] "POST /webhook/jira?user_id=jiatongbin&user_key=jiatongbin HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512046501421,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/121782/comment/58681",
+    "id": "58681",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xueshuai",
+      "name": "xueshuai",
+      "key": "xueshuai",
+      "emailAddress": "xueshuai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11135",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135"
+      },
+      "displayName": "\u859b\u5e05",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u67e5\u770b\u4e86\u7528\u6237\u7684\u884c\u4e3a\u8bb0\u5f55\uff0c\u6682\u65f6\u6ca1\u6709\u770b\u5230\u7528\u6237\u7684crash\u8bb0\u5f55\uff0c\u63a8\u6d4b\u662f\u7531\u4e8e\u6253\u7535\u8bdd\u4e4b\u540e\u56de\u5230\u524d\u53f0\uff0c\u72b6\u6001\u4fe1\u606f\u65e0\u6cd5\u6062\u590d\u9020\u6210\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xueshuai",
+      "name": "xueshuai",
+      "key": "xueshuai",
+      "emailAddress": "xueshuai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11135",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135"
+      },
+      "displayName": "\u859b\u5e05",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:55:01.421+0800",
+    "updated": "2017-11-30T20:55:01.421+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512046501421, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/121782/comment/58681', 'id': '58681', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xueshuai', 'name': 'xueshuai', 'key': 'xueshuai', 'emailAddress': 'xueshuai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11135', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135'}, 'displayName': '薛帅', 'active': True, 'timeZone': 'PRC'}, 'body': '查看了用户的行为记录，暂时没有看到用户的crash记录，推测是由于打电话之后回到前台，状态信息无法恢复造成。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xueshuai', 'name': 'xueshuai', 'key': 'xueshuai', 'emailAddress': 'xueshuai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11135', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135'}, 'displayName': '薛帅', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:55:01.421+0800', 'updated': '2017-11-30T20:55:01.421+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:55:01] "POST /webhook/jira?user_id=xueshuai&user_key=xueshuai HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512046618879,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/125953/comment/58682",
+    "id": "58682",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxu.pm",
+      "name": "zhangxu.pm",
+      "key": "zhangxu.pm",
+      "emailAddress": "zhangxu.pm@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=zhangxu.pm&avatarId=11420",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxu.pm&avatarId=11420",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxu.pm&avatarId=11420",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxu.pm&avatarId=11420"
+      },
+      "displayName": "\u5f20\u65ed",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "addressbook_access \u6ca1\u89c2\u5bdf\u5230\u6570\u636e\uff0c\u660e\u5929\u518d\u770b\u4e00\u4e0b",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxu.pm",
+      "name": "zhangxu.pm",
+      "key": "zhangxu.pm",
+      "emailAddress": "zhangxu.pm@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=zhangxu.pm&avatarId=11420",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxu.pm&avatarId=11420",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxu.pm&avatarId=11420",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxu.pm&avatarId=11420"
+      },
+      "displayName": "\u5f20\u65ed",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:56:58.879+0800",
+    "updated": "2017-11-30T20:56:58.879+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512046618879, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/125953/comment/58682', 'id': '58682', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxu.pm', 'name': 'zhangxu.pm', 'key': 'zhangxu.pm', 'emailAddress': 'zhangxu.pm@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=zhangxu.pm&avatarId=11420', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxu.pm&avatarId=11420', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxu.pm&avatarId=11420', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxu.pm&avatarId=11420'}, 'displayName': '张旭', 'active': True, 'timeZone': 'PRC'}, 'body': 'addressbook_access 没观察到数据，明天再看一下', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxu.pm', 'name': 'zhangxu.pm', 'key': 'zhangxu.pm', 'emailAddress': 'zhangxu.pm@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=zhangxu.pm&avatarId=11420', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxu.pm&avatarId=11420', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxu.pm&avatarId=11420', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxu.pm&avatarId=11420'}, 'displayName': '张旭', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:56:58.879+0800', 'updated': '2017-11-30T20:56:58.879+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:56:59] "POST /webhook/jira?user_id=zhangxu.pm&user_key=zhangxu.pm HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512046655026,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127530/comment/58683",
+    "id": "58683",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=chengkai",
+      "name": "chengkai",
+      "key": "chengkai",
+      "emailAddress": "chengkai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u7a0b\u51ef",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "4.3.0\u4fee\u590d\u4e86\u8fd9\u4e2abug\uff0c\u63d0\u793a\u7528\u6237\u5347\u7ea7app\u5373\u53ef\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=chengkai",
+      "name": "chengkai",
+      "key": "chengkai",
+      "emailAddress": "chengkai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=10122",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122"
+      },
+      "displayName": "\u7a0b\u51ef",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T20:57:35.026+0800",
+    "updated": "2017-11-30T20:57:35.026+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512046655026, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127530/comment/58683', 'id': '58683', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=chengkai', 'name': 'chengkai', 'key': 'chengkai', 'emailAddress': 'chengkai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '程凯', 'active': True, 'timeZone': 'PRC'}, 'body': '4.3.0修复了这个bug，提示用户升级app即可。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=chengkai', 'name': 'chengkai', 'key': 'chengkai', 'emailAddress': 'chengkai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=10122', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=10122', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=10122', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=10122'}, 'displayName': '程凯', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T20:57:35.026+0800', 'updated': '2017-11-30T20:57:35.026+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 12:57:35] "POST /webhook/jira?user_id=chengkai&user_key=chengkai HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512046959994,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127898/comment/58684",
+    "id": "58684",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xueshuai",
+      "name": "xueshuai",
+      "key": "xueshuai",
+      "emailAddress": "xueshuai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11135",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135"
+      },
+      "displayName": "\u859b\u5e05",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u67e5\u770b\u4e86\u7528\u6237\u5f53\u65f6\u7684\u884c\u4e3a\u8bb0\u5f55\uff0c\u663e\u793a\u7528\u6237\u5f53\u65f6\u7684Network\u72b6\u6001\u4e3a\u4e0d\u5728\u7ebf\uff0c\u5bfc\u81f4\u65e0\u7f51\u7edc\u8bf7\u6c42\u3002",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=xueshuai",
+      "name": "xueshuai",
+      "key": "xueshuai",
+      "emailAddress": "xueshuai@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11135",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135"
+      },
+      "displayName": "\u859b\u5e05",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T21:02:39.994+0800",
+    "updated": "2017-11-30T21:02:39.994+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512046959994, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127898/comment/58684', 'id': '58684', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xueshuai', 'name': 'xueshuai', 'key': 'xueshuai', 'emailAddress': 'xueshuai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11135', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135'}, 'displayName': '薛帅', 'active': True, 'timeZone': 'PRC'}, 'body': '查看了用户当时的行为记录，显示用户当时的Network状态为不在线，导致无网络请求。', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=xueshuai', 'name': 'xueshuai', 'key': 'xueshuai', 'emailAddress': 'xueshuai@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11135', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11135', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11135', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11135'}, 'displayName': '薛帅', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T21:02:39.994+0800', 'updated': '2017-11-30T21:02:39.994+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 13:02:40] "POST /webhook/jira?user_id=xueshuai&user_key=xueshuai HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512047105369,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/127875/comment/58685",
+    "id": "58685",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangzenghui",
+      "name": "wangzenghui",
+      "key": "wangzenghui",
+      "emailAddress": "wangzenghui@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11134",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11134",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11134",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11134"
+      },
+      "displayName": "\u738b\u589e\u8f89",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "\u6682\u4e0d\u4fee\u590d\uff0c\u4e0d\u5f71\u54cd\u53d1\u7248\u3002\u540e\u7eed\u4fee\u590d\u540e\u5408\u5165",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=wangzenghui",
+      "name": "wangzenghui",
+      "key": "wangzenghui",
+      "emailAddress": "wangzenghui@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?avatarId=11134",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11134",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11134",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11134"
+      },
+      "displayName": "\u738b\u589e\u8f89",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T21:05:05.369+0800",
+    "updated": "2017-11-30T21:05:05.369+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512047105369, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/127875/comment/58685', 'id': '58685', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangzenghui', 'name': 'wangzenghui', 'key': 'wangzenghui', 'emailAddress': 'wangzenghui@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11134', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11134', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11134', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11134'}, 'displayName': '王增辉', 'active': True, 'timeZone': 'PRC'}, 'body': '暂不修复，不影响发版。后续修复后合入', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=wangzenghui', 'name': 'wangzenghui', 'key': 'wangzenghui', 'emailAddress': 'wangzenghui@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?avatarId=11134', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&avatarId=11134', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&avatarId=11134', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&avatarId=11134'}, 'displayName': '王增辉', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T21:05:05.369+0800', 'updated': '2017-11-30T21:05:05.369+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 13:05:05] "POST /webhook/jira?user_id=wangzenghui&user_key=wangzenghui HTTP/1.0" 200 -
+INFO:root:
+[jira
+<^>
+{
+  "timestamp": 1512047131794,
+  "webhookEvent": "comment_created",
+  "comment": {
+    "self": "https://jira.bytedance.com/rest/api/2/issue/128092/comment/58687",
+    "id": "58687",
+    "author": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxing",
+      "name": "zhangxing",
+      "key": "zhangxing",
+      "emailAddress": "zhangxing@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=zhangxing&avatarId=11528",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxing&avatarId=11528",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxing&avatarId=11528",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxing&avatarId=11528"
+      },
+      "displayName": "\u5f20\u5174",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "body": "info\u63a5\u53e3\u8fd4\u56de\u65f6\u5019\uff0c\u6ca1\u6709\u4f7f\u7528\u6700\u65b0\u7684\u72b6\u6001\u53bb\u5237\u65b0\u5e16\u5b50\u8be6\u60c5\u9875",
+    "updateAuthor": {
+      "self": "https://jira.bytedance.com/rest/api/2/user?username=zhangxing",
+      "name": "zhangxing",
+      "key": "zhangxing",
+      "emailAddress": "zhangxing@bytedance.com",
+      "avatarUrls": {
+        "48x48": "https://jira.bytedance.com/secure/useravatar?ownerId=zhangxing&avatarId=11528",
+        "24x24": "https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxing&avatarId=11528",
+        "16x16": "https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxing&avatarId=11528",
+        "32x32": "https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxing&avatarId=11528"
+      },
+      "displayName": "\u5f20\u5174",
+      "active": true,
+      "timeZone": "PRC"
+    },
+    "created": "2017-11-30T21:05:31.794+0800",
+    "updated": "2017-11-30T21:05:31.794+0800"
+  }
+}
+<^>
+jira]
+
+INFO:root:Invalid data format: data={'timestamp': 1512047131794, 'webhookEvent': 'comment_created', 'comment': {'self': 'https://jira.bytedance.com/rest/api/2/issue/128092/comment/58687', 'id': '58687', 'author': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxing', 'name': 'zhangxing', 'key': 'zhangxing', 'emailAddress': 'zhangxing@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=zhangxing&avatarId=11528', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxing&avatarId=11528', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxing&avatarId=11528', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxing&avatarId=11528'}, 'displayName': '张兴', 'active': True, 'timeZone': 'PRC'}, 'body': 'info接口返回时候，没有使用最新的状态去刷新帖子详情页', 'updateAuthor': {'self': 'https://jira.bytedance.com/rest/api/2/user?username=zhangxing', 'name': 'zhangxing', 'key': 'zhangxing', 'emailAddress': 'zhangxing@bytedance.com', 'avatarUrls': {'48x48': 'https://jira.bytedance.com/secure/useravatar?ownerId=zhangxing&avatarId=11528', '24x24': 'https://jira.bytedance.com/secure/useravatar?size=small&ownerId=zhangxing&avatarId=11528', '16x16': 'https://jira.bytedance.com/secure/useravatar?size=xsmall&ownerId=zhangxing&avatarId=11528', '32x32': 'https://jira.bytedance.com/secure/useravatar?size=medium&ownerId=zhangxing&avatarId=11528'}, 'displayName': '张兴', 'active': True, 'timeZone': 'PRC'}, 'created': '2017-11-30T21:05:31.794+0800', 'updated': '2017-11-30T21:05:31.794+0800'}}
+ exception='NoneType' object has no attribute 'get'
+ trace=Traceback (most recent call last):
+  File "/mnt/sites/jira.py", line 20, in transform_data
+    title, text = _assemble_message(data)
+  File "/mnt/sites/jira.py", line 143, in _assemble_message
+    issue_type = get_issue_type(data)
+  File "/mnt/sites/jira.py", line 212, in get_issue_type
+    return data.get('issue').get('fields').get('issuetype').get('name')
+AttributeError: 'NoneType' object has no attribute 'get'
+
+INFO:root:msg: {}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31 HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 40035, 'errmsg': '不合法的参数'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.17.0.1 - - [30/Nov/2017 13:05:31] "POST /webhook/jira?user_id=zhangxing&user_key=zhangxing HTTP/1.0" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3002/ (Press CTRL+C to quit)
+INFO:werkzeug:172.21.0.1 - - [30/Nov/2017 21:10:24] "POST /webhook/jenkins HTTP/1.0" 404 -
+INFO:werkzeug: * Running on http://0.0.0.0:3002/ (Press CTRL+C to quit)
+INFO:root:
+[jenkins
+<^>
+{
+  "name": "eventhub",
+  "display_name": "eventhub",
+  "url": "job/hellogo/",
+  "build": {
+    "full_url": "http://jenkins.yogiman.cn:8080/job/eventhub/job/master/",
+    "number": 11,
+    "queue_id": 3,
+    "timestamp": 1510889226696,
+    "phase": "STARTED",
+    "url": "job/hellogo/11/",
+    "scm": {
+      "url": "http://10.1.80.107:10080/yangluo/hellogo.git",
+      "branch": "origin/master",
+      "commit": "839c10a3697c8ad0ff1938c9eb4d9ea9e038f86a"
+    },
+    "log": "",
+    "artifacts": {}
+  }
+}
+<^>
+jenkins]
+
+INFO:root:msg: {'msgtype': 'markdown', 'markdown': {'title': '开始构建 eventhub', 'text': '#### 开始构建 eventhub \n[点击查看详情](http://jenkins.yogiman.cn:8080/job/eventhub/job/master/)'}}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oapi.dingtalk.com
+DEBUG:urllib3.connectionpool:https://oapi.dingtalk.com:443 "POST /robot/send?access_token=49679eab1c1d2c16af000de2f61e2803a9071cb38b92e16b05c8ba18f007ccaa HTTP/1.1" 200 None
+INFO:root:resp: {'errcode': 0, 'errmsg': 'ok'}
+INFO:root:resp: <Response [200]>
+INFO:werkzeug:172.21.0.1 - - [30/Nov/2017 21:16:16] "POST /webhook/jenkins HTTP/1.0" 200 -

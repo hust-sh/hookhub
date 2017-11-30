@@ -1,0 +1,21 @@
+version: "2"
+services:
+  hookhub:
+    build: image/hookhub
+    links:
+      - redis
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ../app:/mnt/
+      - ../log/:/var/log/ 
+    ports:
+      - "3002:3002"
+    environment:
+      ENV: dev
+  redis:
+    image: redis:alpine
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "6379:6379"
+

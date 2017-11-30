@@ -2,6 +2,8 @@
 
 import functools
 import importlib
+from flask import url_for
+from uuid import uuid4
 
 
 class SiteLocator:
@@ -56,4 +58,15 @@ def wraps_client_factory(client_cls):
 		return ClientWrapper(client)
 
 	return _func
+
+
+def gen_access_token():
+
+    return uuid().hex
+
+
+def gen_webhook(site):
+
+    access_token = gen_access_token()
+    return url_for('admin.webhook', site=site, access_token=access_token, _scheme='http',  _external=True)
 
