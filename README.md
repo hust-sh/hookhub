@@ -26,6 +26,12 @@
 这条命令的功能是向使用钉钉创建的webhook_0向hookhub换取hookhub的webhook_1;将webhook_1贴到jenkins（或其他站点）上，这样就能让hookhub转发消息了。
 
 
+## Roadmap
+
+* 增加Oauth流程
+* 支持Trello
+* 支持Gitlab
+
 # Descriptions
 
 * 已支持
