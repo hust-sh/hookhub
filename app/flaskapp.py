@@ -37,7 +37,13 @@ app.register_blueprint(blueprint)
 @app.route('/test')
 def test():
 
-    return url_for('admin.webhook', access_token='abc123',  _external=True)
+    #return url_for('admin.webhook', access_token='abc123',  _external=True)
+    from common.cache import get_redis
+    cli = get_redis()
+    pipe = cli.pipeline()
+    pipe.set('yangluo', 'fizz')
+    res = pipe.execute()
+    return str(res)
 
 
 def formating(data):
