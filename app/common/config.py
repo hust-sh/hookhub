@@ -9,3 +9,5 @@ REDIS_CONF = {
 
 WEBHOOK_TYPES = ['jira', 'jenkins']
 LOG_DIR = '/var/log'
+
+HOST = '120.78.197.57'

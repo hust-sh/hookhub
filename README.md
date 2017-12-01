@@ -20,11 +20,17 @@
 
 * 使用url向hookhub换取webhook
 
-        ./tools/gen_hook.sh -s jenkins -u http://xxx.xxx.xxx/robot/send?access_token=xxxxx
+        # ./tools/gen_hook.sh -s jenkins -u http://xxx.xxx.xxx/robot/send?access_token=xxxxx
+        {
+            "ok": true,
+            "webhook": "http://120.78.197.57/webhook/jira?access_token=5467e9fa74ae4a9ba7adec4307ccfacb"
+        }
 
 `http://xxx.xxx.xxx/robot/send?access_token=xxxxx` 为在钉钉创建机器人时的生成的webhook。<br>
 这条命令的功能是向使用钉钉创建的webhook_0向hookhub换取hookhub的webhook_1;将webhook_1贴到jenkins（或其他站点）上，这样就能让hookhub转发消息了。
 
+注意：返回结果中webhook的值中不带端口号，是因为受本地nginx影响，使用时应当根据情况带上端口号3002。
+HOST需要在common/config.py中配置
 
 ## Roadmap
 

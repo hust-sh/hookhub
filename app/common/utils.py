@@ -5,6 +5,7 @@ import importlib
 from flask import url_for
 from uuid import uuid4
 from common.cache import get_redis
+import common.config as const
 
 
 class SiteLocator:
@@ -68,7 +69,8 @@ def gen_access_token():
 
 def gen_webhook(site, access_token):
 
-    return url_for('admin.webhook', site=site, access_token=access_token, _scheme='http',  _external=True)
+    path = url_for('admin.webhook', site=site, access_token=access_token)
+    return 'http://{host}{path}'.format(host=const.HOST, path=path)  # 此处根据情况加上端口号
 
 
 def get_webhook(site, access_token):
