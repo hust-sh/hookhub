@@ -7,8 +7,8 @@ from flask import Flask
 from flask_restful import url_for
 from views import blueprint
 import logging
+logging.basicConfig(filename='/var/log/debug.log',level=logging.DEBUG)
 
-logging.basicConfig(filename='/var/log/flask.log',level=logging.DEBUG)
 app = Flask(__name__)
 app.register_blueprint(blueprint)
 
@@ -16,7 +16,6 @@ app.register_blueprint(blueprint)
 @app.route('/test')
 def test():
 
-    #return url_for('admin.webhook', access_token='abc123',  _external=True)
     from common.cache import get_redis
     cli = get_redis()
     pipe = cli.pipeline()

@@ -7,7 +7,7 @@ import common.config as const
 from common.cache import get_redis
 from flask_restful import url_for
 import json
-import logging
+from common.log import logger
 
 blueprint = Blueprint('admin',  __name__)
 
@@ -17,7 +17,7 @@ def webhook(site):
 
     access_token = request.args.get('access_token')
     data = request.get_json()
-    logging.info('\n[{begin}\naccess_token:{token}\n{data}\n{end}]\n'.format(begin=site, token=access_token, data=formating(data), end=site))
+    logger().info('\n[{begin}\naccess_token:{token}\n{data}\n{end}]\n'.format(begin=site, token=access_token, data=formating(data), end=site))
 
     webhook = get_webhook(site, access_token)
     if not webhook:
@@ -27,7 +27,7 @@ def webhook(site):
 
         msg = client_cls.transform_data(data)
         resp = client_cls.send_message(webhook, msg)
-        logging.info("resp: %s", resp)
+        logger().info("resp: %s", resp)
 
     return jsonify(ok=True)
 

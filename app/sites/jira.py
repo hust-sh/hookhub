@@ -2,10 +2,10 @@
 """
 """
 
-import logging
 import traceback
 import requests
 import json
+from common.log import logger
 
 
 webhook = 'https://oapi.dingtalk.com/robot/send?access_token=4431ce3a5a8ac6d057b34615f254fd5e8df8d5eaa9e9c9303f6751eebd84fb31'
@@ -20,21 +20,21 @@ class Jira:
             title, text = _assemble_message(data)
             return _pack_response(title=title, text=text)
         except AttributeError as e:
-            logging.info('Invalid data format: data={data}\n exception={exc}\n trace={trace}'.\
+            logger('jira').info('Invalid data format: data={data}\n exception={exc}\n trace={trace}'.\
             format(data=data, exc=e, trace=traceback.format_exc()))
             return {}
         except Exception as e:
-            logging.info('Incredible Exception: data={data}\n exception={exc}\n trace={trace}'.\
+            logger('jira').info('Incredible Exception: data={data}\n exception={exc}\n trace={trace}'.\
             format(data=data, exc=e, trace=traceback.format_exc()))
             return {}
 
     @classmethod
     def send_message(cls, webhook, msg):
 
-        logging.info("msg: %s", msg)
+        logger('jira').info("msg: %s", msg)
         header = {'Content-type': 'application/json'}
         resp = requests.post(url=webhook, data=json.dumps(msg), headers=header)
-        logging.info("resp: %s", resp.json())
+        logger('jira').info("resp: %s", resp.json())
         return resp
 
 

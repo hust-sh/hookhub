@@ -7,7 +7,7 @@
 ![hookhub sequence](./doc/hookhub.png)
 
 配置过程如下:
-* 现在在钉钉群中（右上角）创建机器人，并保留钉钉生成webhook_0
+* 先在钉钉群中（右上角）创建机器人，并保留钉钉生成webhook_0
 * 到hookhub项目根目录下，执行`./tools/gen_hook.sh -s jenkins -u webhook_0`（注意将上一步的webhook_0替换到命令中。执行成功后会返回一个webhook_1。
 * 将webhook_1填到jenkins服务器(notification plugin)。
 
@@ -28,11 +28,12 @@
 
 ## Roadmap
 
+* 日志分流: 将日志根据site分类 (done)
 * 增加Oauth流程
 * 支持Trello
 * 支持Gitlab
 
-# Descriptions
+## Descriptions
 
 * 已支持
 
