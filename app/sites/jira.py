@@ -29,7 +29,7 @@ class Jira:
             return {}
 
     @classmethod
-    def send_message(cls, msg):
+    def send_message(cls, webhook, msg):
 
         logging.info("msg: %s", msg)
         header = {'Content-type': 'application/json'}

@@ -6,3 +6,5 @@ REDIS_CONF = {
     'url': REDIS_URL,
     'socket_timeout': 0.5,
 }
+
+WEBHOOK_TYPES = ['jira', 'jenkins']

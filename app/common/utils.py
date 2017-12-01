@@ -4,6 +4,7 @@ import functools
 import importlib
 from flask import url_for
 from uuid import uuid4
+from common.cache import get_redis
 
 
 class SiteLocator:
@@ -62,11 +63,15 @@ def wraps_client_factory(client_cls):
 
 def gen_access_token():
 
-    return uuid().hex
+    return uuid4().hex
 
 
-def gen_webhook(site):
+def gen_webhook(site, access_token):
 
-    access_token = gen_access_token()
     return url_for('admin.webhook', site=site, access_token=access_token, _scheme='http',  _external=True)
 
+
+def get_webhook(site, access_token):
+
+    redis_cli = get_redis()
+    return redis_cli.hget(site, access_token)

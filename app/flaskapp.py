@@ -3,34 +3,13 @@
 A webhook hub.
 '''
 
-from flask import Flask, Blueprint, request
-from flask_restful import Api, Resource, url_for
-from common.utils import SiteLocator
+from flask import Flask
+from flask_restful import url_for
+from views import blueprint
 import logging
-import json
 
 logging.basicConfig(filename='/var/log/flask.log',level=logging.DEBUG)
-
 app = Flask(__name__)
-
-blueprint = Blueprint('admin',  __name__)
-
-
-@blueprint.route('/webhook/<string:site>', methods=['GET', 'POST'])
-def webhook(site):
-
-    data = request.get_json()
-    logging.info('\n[{begin}\n<^>\n{data}\n<^>\n{end}]\n'.format(begin=site, data=formating(data), end=site))
-
-    with SiteLocator.get_factory(site) as client_cls:
-
-        msg = client_cls.transform_data(data)
-        resp = client_cls.send_message(msg)
-        logging.info("resp: %s", resp)
-
-    return 'ok'
-
-
 app.register_blueprint(blueprint)
 
 
@@ -46,9 +25,6 @@ def test():
     return str(res)
 
 
-def formating(data):
-
-    return json.dumps(data, indent=2)
 
 if __name__ == '__main__':
 
