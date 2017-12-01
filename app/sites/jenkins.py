@@ -1,10 +1,11 @@
 # coding: utf-8
 
 import json
-from common.config import logger
+from common.log import logger
 import traceback
 import requests
 
+lg = logger('jenkins')
 
 webhook = 'https://oapi.dingtalk.com/robot/send?access_token=49679eab1c1d2c16af000de2f61e2803a9071cb38b92e16b05c8ba18f007ccaa'
 
@@ -22,16 +23,16 @@ class Jenkins:
             title, text = _pack_msg(repo, url, phase, status)
             return _pack_response(title, text)
         except Exception as e:
-            logger(__name__).info('Incredible Exception: data={data}\n exception={exc}\n trace={trace}'.format(data=data, exc=e, trace=traceback.format_exc()))
+            lg.info('Incredible Exception: data={data}\n exception={exc}\n trace={trace}'.format(data=data, exc=e, trace=traceback.format_exc()))
             return {}
 
     @classmethod
     def send_message(cls, webhook, msg):
 
-        logger(__name__).info('msg: %s', msg)
+        lg.info('msg: %s', msg)
         header = {'Content-type': 'application/json'}
         resp = requests.post(url=webhook, data=json.dumps(msg), headers=header)
-        logger(__name__).info("resp: %s", resp.json())
+        lg.info("resp: %s", resp.json())
         return resp
 
 
